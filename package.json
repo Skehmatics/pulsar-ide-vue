@@ -1,18 +1,40 @@
 {
-  "name": "atom-ide-volar",
-  "version": "1.1.0",
-  "description": "Volar Language Server for Atom",
+  "name": "pulsar-ide-vue",
   "main": "./lib/main",
+  "version": "1.0.0",
+  "description": "Vue Language Server for Pulsar",
   "keywords": [],
-  "repository": "https://github.com/kabiaa/atom-ide-volar",
+  "repository": "https://github.com/Skehmatics/pulsar-ide-vue",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
+  "activationHooks": [
+    "text.html.vue:root-scope-used"
+  ],
+  "enhancedScopes": [
+    "text.html.vue"
+  ],
   "dependencies": {
-    "@volar/vue-language-server": "^1.0.0",
-    "atom-languageclient": "^1.16.1",
-    "typescript": "^4.9.4"
+    "@vue/language-server": "^2.2.10",
+    "@savetheclocktower/atom-languageclient": "^1.17.2",
+    "typescript": "^5.1.6"
+  },
+  "configSchema": {
+    "nodeBin": {
+      "title": "Path to Node",
+      "default": "node",
+      "type": "string",
+      "description": "Usually the default will detect the correct version of Node for your path. Specify this value if you encounter errors. Check the README for more information.",
+      "order": 0
+    },
+    "tsdk": {
+      "title": "Path to Typescript SDK",
+      "default": "",
+      "type": "string",
+      "description": "The typescript SDK that Vue will use to provide language services for JS/TS code. Default will search for it in your `node_modules` folder and fall back to a bundled version. Specify this value if you encounter problems.",
+      "order": 1
+    }
   },
   "consumedServices": {
     "linter-indie": {
@@ -29,7 +51,7 @@
   "providedServices": {
     "autocomplete.provider": {
       "versions": {
-        "2.0.0": "provideAutocomplete"
+        "4.0.0": "provideAutocomplete"
       }
     },
     "definitions": {
