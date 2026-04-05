@@ -1,8 +1,8 @@
 {
   "name": "atom-ide-volar",
-  "main": "./lib/atom-ide-volar",
   "version": "1.1.0",
   "description": "Volar Language Server for Atom",
+  "main": "./lib/main",
   "keywords": [],
   "repository": "https://github.com/kabiaa/atom-ide-volar",
   "license": "MIT",
